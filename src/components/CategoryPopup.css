@@ -1,0 +1,52 @@
+.category-popup-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(100vw, 400px);
+    max-height: 80vh;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+.category-icon-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.category-form-box {
+    width: 100%;
+}
+
+.category-form-box h5 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.category-loading {
+    text-align: center;
+    color: #444;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    color: #000;
+    font-size: 1rem;
+    line-height: 2;
+    text-align: left;
+}

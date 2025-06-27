@@ -1,0 +1,178 @@
+.write-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(100vw, 800px);
+    max-height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+.write-icon-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.write-form-box {
+    width: 100%;
+}
+
+.write-form-box h5 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.write-input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.write-input-box label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.write-input-box input,
+.write-input-box textarea,
+.write-input-box select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #999;
+    border-radius: 8px;
+    outline: none;
+    color: #000;
+    transition: border-color 0.3s ease;
+}
+
+.write-input-box input:focus,
+.write-input-box textarea:focus,
+.write-input-box select:focus {
+    border-color: #000;
+}
+
+.write-input-box textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.write-input-box select {
+    height: 44px;
+}
+
+.write-input-box input[type="file"] {
+    padding-left: 0;
+    background: transparent;
+    border: none;
+}
+
+.write-btn {
+    width: 100%;
+    height: 48px;
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.write-btn:hover {
+    background: #222;
+}
+
+.write-btn-bottom-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.write-btn-small {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.write-btn-small:hover {
+    background: linear-gradient(135deg, #3b00c4, #741cd6);
+}
+
+@media (max-width: 768px) {
+    .write-wrapper {
+        width: 90vw;
+        padding: 16px 20px;
+    }
+
+    .write-form-box h5 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .write-btn {
+        height: 44px;
+        font-size: 0.95rem;
+    }
+
+    .write-btn-small {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .write-form-box h5 {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+
+    .write-input-box label {
+        font-size: 0.85rem;
+    }
+
+    .write-input-box input,
+    .write-input-box textarea,
+    .write-input-box select {
+        font-size: 0.9rem;
+    }
+
+    .write-btn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .write-btn-small {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
