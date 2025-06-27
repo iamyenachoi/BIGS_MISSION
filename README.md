@@ -8,7 +8,7 @@
 
 ```bash
 git clone https://github.com/iamyenachoi/BIGS_MISSION.git
-cd BIGS_MISSION
+cd BIGS_
 npm install
 npm run dev
 ```
