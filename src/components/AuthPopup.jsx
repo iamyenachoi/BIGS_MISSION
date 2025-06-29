@@ -29,7 +29,11 @@ function AuthPopup({ show, onClose }) {
             const token = data.token || data.accessToken;
 
             if (response.ok && token) {
+<<<<<<< HEAD
                 const decoded = jwtDecode(token);
+=======
+                const decoded = jwtDecode(token); // ✅ 이 부분 수정됨
+>>>>>>> 2f7d257dc862068ddf3f4a557f7a6a3cf99130bb
                 const name = decoded.name;
 
                 localStorage.setItem('token', token);

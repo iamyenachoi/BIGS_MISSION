@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './WritePopup.css'
+import '../components/WritePopup.css'
 
 function WritePopup() {
     const [title, setTitle] = useState('')
@@ -25,8 +25,11 @@ function WritePopup() {
             new Blob([JSON.stringify({
                 title,
                 content,
-                category
-            })], { type: 'application/json' })
+                category,
+                username: user.username
+            })], {
+                type: 'application/json',
+            })
         )
         if (file) formData.append('file', file)
 
@@ -74,21 +77,16 @@ function WritePopup() {
                             <option value="NOTICE">공지사항</option>
                             <option value="FREE">자유게시판</option>
                             <option value="QUESTION">질문게시판</option>
-<<<<<<< HEAD
-    <option value="ETC">기타게시판</option>
-=======
-                            <option value="QUESTION">기타게시판</option>
->>>>>>> 2f7d257dc862068ddf3f4a557f7a6a3cf99130bb
-                        </select >
-                    </div >
+                        </select>
+                    </div>
                     <div className="write-input-box">
                         <label>첨부 파일</label>
                         <input type="file" onChange={(e) => setFile(e.target.files[0])} />
                     </div>
                     <button type="submit" className="write-btn">등록</button>
-                </form >
-            </div >
-        </div >
+                </form>
+            </div>
+        </div>
     )
 }
 
