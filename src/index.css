@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+  cursor: default;
+}
+
+body {
+  min-height: 100vh;
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  z-index: 99;
+}
+
+.header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 0.5em;
+}
+
+.logo {
+  font-size: 2em;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  white-space: nowrap;
+}
+
+.menu-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+  max-width: 100%;
+  width: auto;
+  justify-content: flex-end;
+}
+
+.main-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.main-buttons a:first-child {
+  margin-right: clamp(1rem, 4vw, 40px);
+}
+
+.main-buttons a:last-child {
+  margin-right: 0;
+}
+
+.main-buttons a {
+  position: relative;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: font-size 0.3s;
+}
+
+.main-buttons a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.main-buttons a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.submenu-buttons-horizontal {
+  position: relative;
+  display: flex;
+  gap: clamp(1rem, 4vw, 40px);
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition: opacity 0.35s ease, transform 0.4s ease;
+  pointer-events: none;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-left: clamp(1rem, 4vw, 40px);
+  flex-wrap: wrap;
+}
+
+.submenu-buttons-horizontal.show {
+  opacity: 1;
+  transform: scaleX(1);
+  pointer-events: auto;
+}
+
+.submenu-buttons-horizontal a {
+  position: relative;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: font-size 0.3s;
+  white-space: nowrap;
+}
+
+.submenu-buttons-horizontal a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.submenu-buttons-horizontal a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.user-id {
+  color: white;
+  font-size: 0.9em;
+}
+
+.btnLogin-popup {
+  width: 80px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+
+.btnLogin-popup:hover {
+  background: #fff;
+  color: black;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 1em 60px;
+  }
+
+  .logo {
+    font-size: 1.8em;
+  }
+
+  .btnLogin-popup {
+    width: 72px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.75em 40px;
+  }
+
+  .logo {
+    font-size: 1.6em;
+  }
+
+  .main-buttons a,
+  .submenu-buttons-horizontal a {
+    font-size: 0.9em;
+  }
+
+  .btnLogin-popup {
+    font-size: 0.85em;
+    width: 70px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75em 20px;
+  }
+
+  .logo {
+    font-size: 1.4em;
+  }
+
+  .main-buttons,
+  .submenu-buttons-horizontal {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6em;
+  }
+
+  .main-buttons a,
+  .submenu-buttons-horizontal a,
+  .btnLogin-popup,
+  .user-id {
+    font-size: 0.75em;
+  }
+}
