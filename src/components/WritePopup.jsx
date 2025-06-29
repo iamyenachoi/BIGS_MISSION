@@ -74,7 +74,7 @@ function WritePopup() {
                             <option value="NOTICE">공지사항</option>
                             <option value="FREE">자유게시판</option>
                             <option value="QUESTION">질문게시판</option>
-                            <option value="QUESTION">기타게시판</option>
+                            <option value="ETC">기타게시판</option>
                         </select >
                     </div >
                     <div className="write-input-box">
